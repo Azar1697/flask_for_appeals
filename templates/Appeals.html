@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавить обращениеz
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Обращения для Менеджера процесса управления обращениями </h2>
+    <form method="post" action="{{ url_for('submit_appeal') }}" class="form-control mb-4">
+        <input type="hidden" name="user_group" value="RG_Менеджеры процесса управления обращениями">
+        <div class="mb-3">
+            <label for="subject" class="form-label">ФИО:</label>
+            <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Опишите проблему:</label>
+            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit">Отправить обращение</button>
+        </div>
+    </form>
+
+    <hr>
+    <h2 class="mb-4">Обращения для Сервис-менеджера </h2>
+    <form method="post" action="{{ url_for('submit_appeal') }}" class="form-control mb-4">
+        <input type="hidden" name="user_group" value="RG_Сервис-менеджеры">
+        <div class="mb-3">
+            <label for="subject" class="form-label">ФИО:</label>
+            <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Опишите проблему:</label>
+            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit">Отправить обращение</button>
+        </div>
+    </form>
+
+    <hr>
+    <h2 class="mb-4">Обращения для Специалиста Сервис-Деск </h2>
+    <form method="post" action="{{ url_for('submit_appeal') }}" class="form-control mb-4">
+        <input type="hidden" name="user_group" value="RG_Специалисты Сервис-Деск">
+        <div class="mb-3">
+            <label for="subject" class="form-label">ФИО:</label>
+            <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Опишите проблему:</label>
+            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit">Отправить обращение</button>
+        </div>
+    </form>
+
+    <hr>
+    <h2 class="mb-4">Обращения для Администратора</h2>
+    <form method="post" action="{{ url_for('submit_appeal') }}" class="form-control mb-4">
+        <input type="hidden" name="user_group" value="RG_Администраторы">
+        <div class="mb-3">
+            <label for="subject" class="form-label">ФИО:</label>
+            <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Опишите проблему:</label>
+            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit">Отправить обращение</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

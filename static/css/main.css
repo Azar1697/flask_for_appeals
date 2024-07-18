@@ -1,0 +1,11 @@
+/* HEADER */
+header {
+    position: sticky;
+    top 0;
+
+}
+.header__img {
+    height: 50px;
+    width: 50px
+}
+

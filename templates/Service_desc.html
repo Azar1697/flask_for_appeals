@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Service_desc
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Обращения для Сервис_десков</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Сообщение</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appeal in appeals %}
+            <tr>
+                <td>{{ appeal[1] }}</td>
+                <td>{{ appeal[2] }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_appeal', appeal_id=appeal[0]) }}">
+                        <button class="btn btn-danger" type="submit">Обращение выполнено</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
